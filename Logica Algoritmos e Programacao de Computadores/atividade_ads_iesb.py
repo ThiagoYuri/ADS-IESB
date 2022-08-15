@@ -21,7 +21,13 @@ def ConsultarContato(nome):
   else:
     print("Esse contato não existe")
 
-
+#Deleta todos os dados do contato referente ao nome fornecido
+def RemoverContato(nome):
+  if(nome in listaContatos):
+   listaContatos.pop(nome)
+   print("Contato "+nome+" deletado com sucesso")
+  else:
+    print("Esse contato não existe")
 
 """#Menu do programa
 
@@ -54,4 +60,4 @@ while tfMenu == True:
   elif(opcao.upper() == "3"):
     print("Alterar")
   elif(opcao.upper() == "4"):
-    print("Remover")
+    RemoverContato(input("Digite o nome do contato que será deletado: "));
