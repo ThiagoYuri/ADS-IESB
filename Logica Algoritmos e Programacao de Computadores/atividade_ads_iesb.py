@@ -12,23 +12,23 @@ Original file is located at
 #Adicionar um novo usuario dentro do dicionario
 def InserirContato(nome, telefone, email, twitter, instagram):
   listaContatos[nome] = {"telefone": telefone, "email":email, "twitter":twitter, "instagram": instagram}
-  print("Usuario "+nome+" Cadastrado com sucesso")
+  print("================Usuario "+nome+" Cadastrado com sucesso================")
 
 #Consulta dados do contato referente ao nome fornecido
 def ConsultarContato(nome):
   if(nome in listaContatos):
     print(\
-        "Nome:"+nome+", Email:"+listaContatos[nome]["email"]+", Twitter:"+listaContatos[nome]["twitter"] +", Instagram:"+listaContatos[nome]["instagram"])
+        "=================Nome:"+nome+", Email:"+listaContatos[nome]["email"]+", Twitter:"+listaContatos[nome]["twitter"] +", Instagram:"+listaContatos[nome]["instagram"]+"=================")
   else:
-    print("Esse contato não existe")
+    print("========X========Esse contato não existe========X========")
 
 #Deleta todos os dados do contato referente ao nome fornecido
 def RemoverContato(nome):
   if(nome in listaContatos):
    listaContatos.pop(nome)
-   print("Contato "+nome+" deletado com sucesso")
+   print("=================Contato "+nome+" deletado com sucesso=================")
   else:
-    print("Esse contato não existe")
+    print("========X========Esse contato não existe========X========")
 
 """#Menu do programa
 
