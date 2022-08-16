@@ -12,6 +12,7 @@ Original file is located at
 #Adicionar um novo usuario dentro do dicionario
 def InserirContato(nome, telefone, email, twitter, instagram):
   listaContatos[nome] = {"telefone": telefone, "email":email, "twitter":twitter, "instagram": instagram}
+  print("Usuario "+nome+" Cadastrado com sucesso")
 
 #Consulta dados do contato referente ao nome fornecido
 def ConsultarContato(nome):
@@ -54,7 +55,11 @@ while tfMenu == True:
     print("Você fechou a aplicação")
     tfMenu = False
   elif(opcao.upper() == "1"):
-    InserirContato(input("Nome:"), input("Telefone:"), input("Email"), input("Twitter"), input("instagram"))
+    x= 0 
+    countNewContact = int(input("Digite quantos contatos serão adicionados"))
+    while x < countNewContact:      
+      InserirContato(input("Nome:"), input("Telefone:"), input("Email"), input("Twitter"), input("instagram"))
+      x = x+1
   elif(opcao.upper() == "2"):
     ConsultarContato(input("Digite um nome para consultar: "))
   elif(opcao.upper() == "3"):
