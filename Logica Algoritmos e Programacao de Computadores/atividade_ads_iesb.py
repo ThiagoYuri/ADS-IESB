@@ -30,6 +30,13 @@ def RemoverContato(nome):
   else:
     print("========X========Esse contato não existe========X========")
 
+#Alterar dados informados
+def AlterarContato(nome):
+  if(nome in listaContatos):
+    for i in listaContatos[nome].keys():
+      if(str(input("Deseja alterar o {} Y/N?".format(i)))== "Y"):
+        listaContatos[nome][i] = str(input("Digite o novo {}:".format(i)))
+
 #Relatorio de contatos
 def GerarRelatorio():
   print("Nome \t|\t E-mail \t|\t Twitter \t|\t Instagram")
@@ -71,8 +78,8 @@ while tfMenu == True:
       x = x+1
   elif(opcao.upper() == "2"):
     ConsultarContato(input("Digite um nome para consultar: "))
-  #elif(opcao.upper() == "3"):
-    #AlterarContato(input("Digite um nome do contato para alteração: "))
+  elif(opcao.upper() == "3"):
+    AlterarContato(input("Digite um nome do contato para alteração: "))
   elif(opcao.upper() == "4"):
     RemoverContato(input("Digite o nome do contato que será deletado: "))
   elif(opcao.upper() == "5"):
