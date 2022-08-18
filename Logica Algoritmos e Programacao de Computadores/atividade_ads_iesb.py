@@ -37,6 +37,20 @@ def AlterarContato(nome):
       if(str(input("Deseja alterar o {} Y/N?".format(i)))== "Y"):
         listaContatos[nome][i] = str(input("Digite o novo {}:".format(i)))
 
+#Salvar em arquivo txt no formato ("nome,telefone,email,twitter,instagram")
+def SalvarEmAquivo():
+  file = open('arquivo.txt','w')
+  for i in listaContatos:
+    file.write('{},{},{},{},{}\n'.\
+               format(\
+                      i,\
+                      listaContatos[i]["telefone"],\
+                      listaContatos[i]["email"],\
+                      listaContatos[i]["twitter"],\
+                      listaContatos[i]["instagram"],\
+                      ))
+    file.close()
+
 #Relatorio de contatos
 def GerarRelatorio():
   print("Nome \t|\t E-mail \t|\t Twitter \t|\t Instagram")
@@ -65,6 +79,8 @@ while tfMenu == True:
   \n\
   5 - Gerar relatorio\
   \n\
+  6 - Salvar em .txt\
+  \n\
   X - Sair da aplicação\
   \n")
   if(opcao.upper() == "X"):
@@ -84,3 +100,5 @@ while tfMenu == True:
     RemoverContato(input("Digite o nome do contato que será deletado: "))
   elif(opcao.upper() == "5"):
     GerarRelatorio()
+  elif(opcao.upper() == "6"):
+    SalvarEmAquivo()
