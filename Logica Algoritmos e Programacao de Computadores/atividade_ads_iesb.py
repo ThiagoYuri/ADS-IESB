@@ -34,8 +34,10 @@ def RemoverContato(nome):
 def AlterarContato(nome):
   if(nome in listaContatos):
     for i in listaContatos[nome].keys():
-      if(str(input("Deseja alterar o {} Y/N?".format(i)))== "Y"):
-        listaContatos[nome][i] = str(input("Digite o novo {}:".format(i)))
+      if(str(input("Deseja alterar o {} Y/N? ".format(i)))== "Y"):
+        listaContatos[nome][i] = str(input("Digite o novo {}: ".format(i)))
+  else:
+    print("Contato não encontrado")
 
 #Salvar em arquivo txt no formato ("nome,telefone,email,twitter,instagram")
 def SalvarEmAquivo():
@@ -49,7 +51,8 @@ def SalvarEmAquivo():
                       listaContatos[i]["twitter"],\
                       listaContatos[i]["instagram"],\
                       ))
-    file.close()
+  file.close()
+  print("Documento gerado com sucesso")
 
 #Relatorio de contatos
 def GerarRelatorio():
@@ -88,9 +91,9 @@ while tfMenu == True:
     tfMenu = False
   elif(opcao.upper() == "1"):
     x= 0 
-    countNewContact = int(input("Digite quantos contatos serão adicionados"))
+    countNewContact = int(input("Digite quantos contatos serão adicionados: "))
     while x < countNewContact:      
-      InserirContato(input("Nome:"), input("Telefone:"), input("Email"), input("Twitter"), input("Instagram"))
+      InserirContato(input("Nome: "), input("Telefone: "), input("Email: "), input("Twitter: "), input("Instagram: "))
       x = x+1
   elif(opcao.upper() == "2"):
     ConsultarContato(input("Digite um nome para consultar: "))
