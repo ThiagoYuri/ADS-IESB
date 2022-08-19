@@ -18,7 +18,13 @@ def InserirContato(nome, telefone, email, twitter, instagram):
 def ConsultarContato(nome):
   if(nome in listaContatos):
     print(\
-        "=================Nome:"+nome+", Email:"+listaContatos[nome]["email"]+", Twitter:"+listaContatos[nome]["twitter"] +", Instagram:"+listaContatos[nome]["instagram"]+"=================")
+        "=================\n\
+        Nome:"+nome+",\n\
+        Telefone:"+listaContatos[nome]["telefone"]+",\n\
+        Email:"+listaContatos[nome]["email"]+",\n\
+        Twitter:"+listaContatos[nome]["twitter"] +",\n\
+        Instagram:"+listaContatos[nome]["instagram"]+"\n\
+        =================")
   else:
     print("========X========Esse contato não existe========X========")
 
